@@ -1,0 +1,15 @@
+server java:
+	regolazione giocatori pronti
+	matrici delle barche salvate
+	riceve dati da un client, li trasmette all'altro e viceversa
+
+client c#:
+	placement manuale delle barche
+	barche: 1 da 5, 1 da 4, 2 da 3, 2 da 2 (bottoni neri)
+	matrice 10x10 barche
+	matrice 10x10 attacchi all'avversario;
+
+	il client posizione le barche e la matrice inviata al server
+	quando entrambi i giocatori sono pronti, il gioco inizia.
+	quando è il turno il giocatore seleziona una riga e una colonna e lancerà l'attacco
+	le coordinate vengono inviate al server, che le comunica all'altro client. il client risponde al server con l'esito dell'attacco che lo comunica al client di partenza
