@@ -1,0 +1,11 @@
+R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.exe.config
+R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.exe
+R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.pdb
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.AssemblyReference.cache
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Form1.resources
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Properties.Resources.resources
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.GenerateResource.cache
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.exe
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.pdb
+R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Campo.resources

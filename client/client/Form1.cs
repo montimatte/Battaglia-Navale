@@ -15,6 +15,9 @@ namespace client
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog; //non permette di ridimensionare
         }
+
+
     }
 }
