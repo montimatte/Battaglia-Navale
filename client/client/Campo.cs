@@ -12,9 +12,11 @@ namespace client
 {
     public partial class Campo : Form
     {
-        public Campo()
+        private Matrice m;
+        public Campo(Matrice m)
         {
             this.FormBorderStyle = FormBorderStyle.FixedDialog; //non permette di ridimensionare
+            this.m = m;
             creaMatrice();
         }
 
@@ -30,8 +32,15 @@ namespace client
                     campo[r, c] = new Button();
                     campo[r, c].Width = width;
                     campo[r, c].Height = height;
-                    campo[r, c].BackColor = Color.FromArgb(161, 255, 255);
                     campo[r, c].Location = new Point((c + 1) * width, (r + 1) * height);
+                    if (m.GetCella(r, c).getbarca())
+                    {
+                        campo[r, c].BackColor = Color.FromArgb(71, 77, 7);
+                    }
+                    else
+                    {
+                        campo[r, c].BackColor = Color.FromArgb(161, 255, 255);
+                    }
                     this.Controls.Add(campo[r, c]);
 
                 }
