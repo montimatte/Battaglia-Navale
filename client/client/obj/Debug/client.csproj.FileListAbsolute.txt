@@ -20,3 +20,17 @@ C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-serve
 C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
 C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.exe
 C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.pdb
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe.config
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.pdb
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Form1.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Properties.Resources.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.GenerateResource.cache
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.exe
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.pdb
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\dje-NE\client.resources.dll
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.dje-NE.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\dje-NE\client.resources.dll

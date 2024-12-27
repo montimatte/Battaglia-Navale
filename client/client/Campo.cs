@@ -15,6 +15,7 @@ namespace client
         private Matrice m;
         public Campo(Matrice m)
         {
+            InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog; //non permette di ridimensionare
             this.m = m;
             creaMatrice();
@@ -35,7 +36,7 @@ namespace client
                     campo[r, c].Location = new Point((c + 1) * width, (r + 1) * height);
                     if (m.GetCella(r, c).getbarca())
                     {
-                        campo[r, c].BackColor = Color.FromArgb(71, 77, 7);
+                        campo[r, c].BackColor = Color.FromArgb(0, 0, 0);
                     }
                     else
                     {

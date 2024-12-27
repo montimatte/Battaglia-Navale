@@ -4,7 +4,7 @@ server java:
 	riceve dati da un client, li trasmette all'altro e viceversa
 
 client c#:
-	placement manuale delle barche (finestra con miniatura delle barche, coordinata di partenza e orientamento)
+	placement manuale delle barche (finestra con miniatura delle barche, coordinata di partenza e orientamento) / utente clicca un bottone della matrice, la barca si piazza in un verso ricliccando si ruota, click destroy annulla
 	barche: 1 da 5, 1 da 4, 2 da 3, 2 da 2 (bottoni neri)
 	matrice 10x10 barche
 	matrice 10x10 attacchi all'avversario;

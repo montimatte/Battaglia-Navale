@@ -8,25 +8,25 @@ namespace client
 {
     public class Cella
     {
-        private int x, y;
+        private int r, c;
         private bool barca;
         private bool colpita;
 
-        public Cella(int x, int y, bool barca)
+        public Cella(int r, int c, bool barca)
         {
-            this.x = x;
-            this.y = y;
+            this.r = r;
+            this.c = c;
             this.barca = barca;
             this.colpita = false;
         }
 
-        public int getx()
+        public int getRiga()
         {
-            return x;
+            return r;
         }
-        public int gety()
+        public int getColonna()
         {
-            return y;
+            return c;
         }
         public bool getbarca()
         {

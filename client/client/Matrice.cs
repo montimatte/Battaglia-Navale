@@ -16,18 +16,18 @@ namespace client
             griglia = new Cella[dimensione, dimensione];
 
             //inizializza
-            for (int x = 0; x < dimensione; x++)
+            for (int r = 0; r < dimensione; r++)
             {
-                for (int y = 0; y < dimensione; y++)
+                for (int c = 0; c < dimensione; c++)
                 {
-                    griglia[x, y] = new Cella(x, y, false);
+                    griglia[r, c] = new Cella(r, c, false);
                 }
             }
         }
 
-        public Cella GetCella(int x,int y)
+        public Cella GetCella(int r,int c)
         {
-            return griglia[x, y];
+            return griglia[r, c];
         }
 
         public bool AggiungiBarche(List<Barca> barche)
@@ -38,10 +38,10 @@ namespace client
                 // Controlla se la barca può essere posizionata
                 for (int i = 0; i < barche[k].getLunghezza(); i++)
                 {
-                    int posX = barche[k].getOrizzontale() ? barche[k].getx() + i : barche[k].getx(); //la x cambia in lungo
-                    int posY = barche[k].getOrizzontale() ? barche[k].gety() : barche[k].getx() + i;
+                    int posColonna = barche[k].getOrizzontale() ? barche[k].getColonna() + i : barche[k].getColonna(); //la x cambia in lungo
+                    int posRiga = barche[k].getOrizzontale() ? barche[k].getRiga() : barche[k].getRiga() + i;
 
-                    if (posX >= dimensione || posY >= dimensione || griglia[posX, posY].getbarca())
+                    if (posColonna >= dimensione || posRiga >= dimensione || griglia[posColonna, posRiga].getbarca())
                     {
                         return false; // Spazio occupato o fuori dai limiti
                     }
@@ -50,11 +50,12 @@ namespace client
                 // Posiziona la barca
                 for (int i = 0; i < barche[k].getLunghezza(); i++)
                 {
-                    int posX = barche[k].getOrizzontale() ? barche[k].getx() + i : barche[k].getx();
-                    int posY = barche[k].getOrizzontale() ? barche[k].gety() : barche[k].getx() + i;
+                    int posColonna = barche[k].getOrizzontale() ? barche[k].getColonna() + i : barche[k].getColonna(); //la x cambia in lungo
+                    int posRiga = barche[k].getOrizzontale() ? barche[k].getRiga() : barche[k].getRiga() + i;
 
-                    griglia[posX, posY] = new Cella(posX, posY, true);
-                    barche[k].setCella(griglia[posX, posY], i);
+                    //griglia[posX, posY] = new Cella(posX, posY, true); ??????
+                    griglia[posRiga, posColonna] = new Cella(posRiga, posColonna, true);
+                    barche[k].setCella(griglia[posRiga, posColonna], i);
                 }
             }
             return true;

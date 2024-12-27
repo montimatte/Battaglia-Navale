@@ -64,6 +64,9 @@
     <Compile Include="Missile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Campo.dje-NE.resx">
+      <DependentUpon>Campo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Campo.resx">
       <DependentUpon>Campo.cs</DependentUpon>
     </EmbeddedResource>

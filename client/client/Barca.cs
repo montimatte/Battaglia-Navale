@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace client
 {
     public class Barca
-    {
-        private int x, y;
+    { 
+        private int r, c;
         private Cella[] celle;
         private int lunghezza;
         private bool orizzontale;
         private int colpi;
         private bool affondata;
-        public Barca(int x, int y, int lunghezza, bool orizzontale)
+        public Barca(int r, int c, int lunghezza, bool orizzontale)
         {
-            this.x = x;
-            this.y = y;
+            this.r = r;
+            this.c = c;
             this.celle=new Cella[lunghezza];
             this.lunghezza = lunghezza;
             this.orizzontale = orizzontale;
@@ -25,18 +25,21 @@ namespace client
             this.affondata = false;
 
             //inizializza celle
-            if(orizzontale)
+
+            //int posX = barche[k].getOrizzontale() ? barche[k].getx() + i : barche[k].getx(); //la x cambia in lungo
+            //nt posY = barche[k].getOrizzontale() ? barche[k].gety() : barche[k].gety() + i;
+            if (orizzontale)
             {
                 for(int i = 0; i < lunghezza; i++)
                 {
-                    this.celle[i]=new Cella(x*(i+1),y,true); //la x cambia in lungo
+                    this.celle[i]=new Cella(r,c+i+1,true); //la x cambia in lungo
                 }
             }
             else
             {
                 for (int i = 0; i < lunghezza; i++)
                 {
-                    this.celle[i] = new Cella(x , y * (i + 1), true);
+                    this.celle[i] = new Cella(c , r + (i + 1), true);
                 }
             }
         }
@@ -47,13 +50,13 @@ namespace client
         {
             return orizzontale;
         }
-        public int getx()
+        public int getRiga()
         {
-            return x;
+            return r;
         }
-        public int gety()
+        public int getColonna()
         {
-            return y;
+            return c;
         }
         public Cella GetCella(int i)
         {
@@ -69,7 +72,7 @@ namespace client
         {
             for (int i = 0; i < this.celle.Length; i++)
             {
-                if (m.getx() == this.celle[i].getx() && m.gety() == this.celle[i].gety()) { 
+                if (m.getRiga() == this.celle[i].getRiga() && m.getColonna() == this.celle[i].getColonna()) { 
                     colpi++;
                     this.celle[i].setColpita();
                     if (this.colpi == this.lunghezza)

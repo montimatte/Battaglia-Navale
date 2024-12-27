@@ -67,6 +67,7 @@
             // 
             // ComboBoxRiga5
             // 
+            this.ComboBoxRiga5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxRiga5.FormattingEnabled = true;
             this.ComboBoxRiga5.Items.AddRange(new object[] {
             "1",
@@ -86,6 +87,7 @@
             // 
             // comboBoxColonna5
             // 
+            this.comboBoxColonna5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna5.FormattingEnabled = true;
             this.comboBoxColonna5.Items.AddRange(new object[] {
             "1",
@@ -105,6 +107,7 @@
             // 
             // comboBoxOr5
             // 
+            this.comboBoxOr5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr5.FormattingEnabled = true;
             this.comboBoxOr5.Items.AddRange(new object[] {
             "Orizzontale",
@@ -143,6 +146,7 @@
             // 
             // comboBoxOr4
             // 
+            this.comboBoxOr4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr4.FormattingEnabled = true;
             this.comboBoxOr4.Items.AddRange(new object[] {
             "Orizzontale",
@@ -154,6 +158,7 @@
             // 
             // comboBoxColonna4
             // 
+            this.comboBoxColonna4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna4.FormattingEnabled = true;
             this.comboBoxColonna4.Items.AddRange(new object[] {
             "1",
@@ -173,6 +178,7 @@
             // 
             // comboBoxRiga4
             // 
+            this.comboBoxRiga4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRiga4.FormattingEnabled = true;
             this.comboBoxRiga4.Items.AddRange(new object[] {
             "1",
@@ -192,6 +198,7 @@
             // 
             // comboBoxOr31
             // 
+            this.comboBoxOr31.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr31.FormattingEnabled = true;
             this.comboBoxOr31.Items.AddRange(new object[] {
             "Orizzontale",
@@ -203,6 +210,7 @@
             // 
             // comboBoxColonna31
             // 
+            this.comboBoxColonna31.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna31.FormattingEnabled = true;
             this.comboBoxColonna31.Items.AddRange(new object[] {
             "1",
@@ -222,6 +230,7 @@
             // 
             // comboBoxRiga31
             // 
+            this.comboBoxRiga31.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRiga31.FormattingEnabled = true;
             this.comboBoxRiga31.Items.AddRange(new object[] {
             "1",
@@ -241,6 +250,7 @@
             // 
             // comboBoxOr32
             // 
+            this.comboBoxOr32.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr32.FormattingEnabled = true;
             this.comboBoxOr32.Items.AddRange(new object[] {
             "Orizzontale",
@@ -252,6 +262,7 @@
             // 
             // comboBoxColonna32
             // 
+            this.comboBoxColonna32.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna32.FormattingEnabled = true;
             this.comboBoxColonna32.Items.AddRange(new object[] {
             "1",
@@ -271,6 +282,7 @@
             // 
             // comboBoxRiga32
             // 
+            this.comboBoxRiga32.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRiga32.FormattingEnabled = true;
             this.comboBoxRiga32.Items.AddRange(new object[] {
             "1",
@@ -290,6 +302,7 @@
             // 
             // comboBoxOr21
             // 
+            this.comboBoxOr21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr21.FormattingEnabled = true;
             this.comboBoxOr21.Items.AddRange(new object[] {
             "Orizzontale",
@@ -301,6 +314,7 @@
             // 
             // comboBoxColonna21
             // 
+            this.comboBoxColonna21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna21.FormattingEnabled = true;
             this.comboBoxColonna21.Items.AddRange(new object[] {
             "1",
@@ -320,6 +334,7 @@
             // 
             // comboBoxRiga21
             // 
+            this.comboBoxRiga21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRiga21.FormattingEnabled = true;
             this.comboBoxRiga21.Items.AddRange(new object[] {
             "1",
@@ -339,6 +354,7 @@
             // 
             // comboBoxOr22
             // 
+            this.comboBoxOr22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOr22.FormattingEnabled = true;
             this.comboBoxOr22.Items.AddRange(new object[] {
             "Orizzontale",
@@ -350,6 +366,7 @@
             // 
             // comboBoxColonna22
             // 
+            this.comboBoxColonna22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColonna22.FormattingEnabled = true;
             this.comboBoxColonna22.Items.AddRange(new object[] {
             "1",
@@ -369,6 +386,7 @@
             // 
             // comboBoxRiga22
             // 
+            this.comboBoxRiga22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRiga22.FormattingEnabled = true;
             this.comboBoxRiga22.Items.AddRange(new object[] {
             "1",
@@ -460,7 +478,7 @@
             this.buttonReady.TabIndex = 27;
             this.buttonReady.Text = "Pronto!";
             this.buttonReady.UseVisualStyleBackColor = true;
-            this.buttonReady.Click += new System.EventHandler(this.buttonReady_Click);
+            this.buttonReady.Click += new System.EventHandler(this.buttonReady_ClickAsync);
             // 
             // Form1
             // 

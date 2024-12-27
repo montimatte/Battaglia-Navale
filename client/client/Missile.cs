@@ -8,19 +8,19 @@ namespace client
 {
     public class Missile
     {
-        private int x, y;
-        public Missile(int x, int y)
+        private int r, c;
+        public Missile(int r, int c)
         {
-            this.x = x;
-            this.y = y;
+            this.r = r;
+            this.c = c;
         }
-        public int getx()
+        public int getRiga()
         {
-            return x;
+            return r;
         }
-        public int gety()
+        public int getColonna()
         {
-            return y;
+            return c;
         }
     }
 }
