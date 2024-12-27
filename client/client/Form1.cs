@@ -91,6 +91,8 @@ namespace client
             //visualizzo finestra di gioco
             Campo c = new Campo(matrix);
             c.Show();
+            Nemico n = new Nemico();
+            n.Show();
             this.Hide();
 
             /*

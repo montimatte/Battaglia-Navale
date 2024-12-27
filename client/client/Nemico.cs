@@ -10,14 +10,12 @@ using System.Windows.Forms;
 
 namespace client
 {
-    public partial class Campo : Form
+    public partial class Nemico : Form
     {
-        private Matrice m;
-        public Campo(Matrice m)
+        public Nemico()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog; //non permette di ridimensionare
-            this.m = m;
             creaMatrice();
         }
 
@@ -34,23 +32,7 @@ namespace client
                     campo[r, c].Width = width;
                     campo[r, c].Height = height;
                     campo[r, c].Location = new Point((c + 1) * width, (r + 1) * height);
-                    if (m.GetCella(r, c).getbarca() && !m.GetCella(r,c).getcolpita())
-                    {
-                        campo[r, c].BackColor = Color.FromArgb(0, 0, 0);
-                    }
-                    else if(m.GetCella(r,c).getbarca()&& m.GetCella(r, c).getcolpita())
-                    {
-                        campo[r, c].BackColor = Color.FromArgb(255, 113, 31);
-                    }
-                    else if(!m.GetCella(r, c).getbarca() && m.GetCella(r, c).getcolpita())
-                    {
-                        campo[r, c].BackColor = Color.FromArgb(31, 79, 255);
-
-                    }
-                    else
-                    {
-                        campo[r, c].BackColor = Color.FromArgb(161, 255, 255);
-                    }
+                    campo[r, c].BackColor = Color.FromArgb(128, 128, 128);
                     this.Controls.Add(campo[r, c]);
 
                 }
