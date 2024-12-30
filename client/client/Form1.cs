@@ -44,7 +44,7 @@ namespace client
             comboBoxOr32.SelectedItem = "Verticale";
             comboBoxOr21.SelectedItem = "Orizzontale";
             comboBoxOr22.SelectedItem = "Verticale";
-
+            //end debug
 
 
             //check campi vuoti
@@ -88,12 +88,17 @@ namespace client
                 return;
             }
 
+            Gioco g = new Gioco(matrix);
+            g.pronto();
+            this.Hide();
+            /*
             //visualizzo finestra di gioco
             Campo c = new Campo(matrix);
             c.Show();
             Nemico n = new Nemico();
             n.Show();
             this.Hide();
+            */
 
             /*
             //invio socket e attendo risposta
@@ -121,7 +126,7 @@ namespace client
                 //visualizzo finestra di gioco
                 Campo c = new Campo(matrix);
                 c.Show();
-                this.Close();
+                this.Hide();
             }  
             */
         }

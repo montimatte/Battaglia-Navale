@@ -60,5 +60,27 @@ namespace client
             }
             return true;
         }
+
+        public string toString()
+        {
+            string str = "";
+            for(int r = 0; r < dimensione; r++)
+            {
+                for(int c=0;c<dimensione; c++)
+                {
+                    bool b= griglia[r, c].getbarca();
+                    if (b)
+                    {
+                        str += "1;";
+                    }
+                    else
+                    {
+                        str += "0;";
+                    }
+                }
+                str += "\n";
+            }
+            return str;
+        }
     }
 }

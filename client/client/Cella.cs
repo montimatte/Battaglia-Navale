@@ -32,6 +32,10 @@ namespace client
         {
             return barca;
         }
+        public void setBarca()
+        {
+            this.barca = true;
+        }
         public bool getcolpita()
         {
             return colpita;
