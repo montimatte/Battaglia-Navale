@@ -3,30 +3,34 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 class server{
+    static DatagramSocket sochet;
+    static DatagramPacket client1;
+    static DatagramPacket client2;
+    static matrice m1;
+    static matrice m2;
+
+
     public static void main(String[] args) throws IOException {
+        sochet = new DatagramSocket(12345);
+        client1 = new DatagramPacket(null, 0);
+        client2 = new DatagramPacket(null, 0);
+        m1 = new matrice();
+        m2 = new matrice();
         ready();
         //fare funzione leggi matrice che arriva dal client
+        leggi();
     }
 
     public static void ready() throws IOException
     {
-        DatagramSocket sochet = new DatagramSocket(12345);
-
-        DatagramPacket client1 = new DatagramPacket(null, 0);
-        DatagramPacket client2 = new DatagramPacket(null, 0);
-
-
         while (true) { 
 
-            byte[] buffer = new byte[1500];
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-            sochet.receive(packet);
+            DatagramPacket packet = new DatagramPacket(null,-1);
+            String messaggio = recive(packet);
             
-            String messaggio = new String(packet.getData(),0,packet.getLength());
             System.out.println(messaggio);
 
             int nPronto = 0;
-
 
             if(messaggio.equals("pronto"))
             {              
@@ -47,29 +51,108 @@ class server{
                 client2.setPort(packet.getPort());
 
                 String messaggioInizio = "inizio";
-                byte[] bufferInizio = messaggioInizio.getBytes();
-
-                client1.setData(bufferInizio);
-                client1.setLength(bufferInizio.length);
-
-                client2.setData(bufferInizio);
-                client2.setLength(bufferInizio.length);
-
-                sochet.send(client1);
-                sochet.send(client2);
-
+                
+                send(messaggioInizio, client1);
+                send(messaggioInizio, client2);
                 break;
             }
         }
-
-        //pacchetto da inviare al primo client per indicare il turno
-        String messaggioTurno = "è il tuo turno";
-        byte[] bufferTurno = messaggioTurno.getBytes();
-        client1.setData(bufferTurno);
-        client1.setLength(bufferTurno.length);
-
-        sochet.send(client1);
     }
-   
 
+    public static void leggi() throws IOException
+    {
+        int contatore = 0;
+        while(contatore < 2)
+        {
+            DatagramPacket packet = new DatagramPacket(null,-1);
+            String messaggio = recive(packet);
+    
+            if(packet.getAddress() == client1.getAddress() && packet.getPort() == client1.getPort())
+            {
+                m1.popola(messaggio);
+                contatore++;
+            }
+            else if(packet.getAddress() == client2.getAddress() && packet.getPort() == client2.getPort())
+            {
+                m2.popola(messaggio);
+                contatore++;
+            }
+        }
+    }
+
+    public static void turno(DatagramPacket giocatore, DatagramPacket avversario,matrice mGiocatore, matrice mAvversario) throws IOException
+    {
+        String messaggioTurno = "è il tuo turno";
+        send(messaggioTurno, giocatore);
+
+        //ricevo il messaggio che è un riga;colonna
+        DatagramPacket packet = new DatagramPacket(null,-1);
+        String messaggio = recive(packet);
+
+        String[] campi = messaggio.split(";");
+        int riga = Integer.parseInt(campi[0]);
+        int colonna = Integer.parseInt(campi[1]);
+
+        int colpita = mAvversario.getColpita(riga, colonna);
+
+        //invio la risposta a entrambi
+        String risposta = riga+";"+colonna+";"+colpita;
+        send(risposta, giocatore);
+        send(risposta, avversario);
+
+        //controllo se il gioco è finito
+        packet = new DatagramPacket(null,-1);
+        messaggio = recive(packet);
+
+        if(messaggio.equals("game over"))
+        {
+            send("fine gioco", giocatore);
+            send("fine gioco", avversario);
+        }
+        else
+        {
+            send("continua", giocatore);
+            send("continua", avversario);
+        }
+
+    }
+
+    public static void gioca() throws IOException
+    {
+        //pacchetto da inviare al primo client per indicare il turno
+        int turno = 1;
+        while(true)
+        {
+            if(turno == 1)
+            {
+                turno(client1,client2,m1,m2);
+                turno++;
+            }
+            else if(turno == 2)
+            {
+                turno(client2,client1,m2,m1);
+                turno--;
+            }
+        }
+       
+    }
+
+    public static String recive(DatagramPacket packet) throws IOException
+    {
+        byte[] buffer = new byte[1500];
+        packet = new DatagramPacket(buffer, buffer.length);
+        sochet.receive(packet);
+        
+        String messaggio = new String(packet.getData(),0,packet.getLength());
+
+        return messaggio;
+    }
+
+    public static void send(String messaggio,DatagramPacket packet)throws IOException
+    {
+        byte[] bufferRisposta = messaggio.getBytes();
+        packet.setData(bufferRisposta);
+        packet.setLength(bufferRisposta.length);
+        sochet.send(packet);
+    }
 }

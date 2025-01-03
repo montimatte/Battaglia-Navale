@@ -22,4 +22,12 @@ public class matrice {
         }
             
     }
+
+    //se è stata colpita la cella
+    public int getColpita(int riga, int colonna)
+    {
+        if(matrix[riga][colonna].equals("1"))
+            return 1;
+        return 0;
+    }
 }
