@@ -478,7 +478,7 @@
             this.buttonReady.TabIndex = 27;
             this.buttonReady.Text = "Pronto!";
             this.buttonReady.UseVisualStyleBackColor = true;
-            this.buttonReady.Click += new System.EventHandler(this.buttonReady_ClickAsync);
+            this.buttonReady.Click += new System.EventHandler(this.buttonReady_Click);
             // 
             // Form1
             // 

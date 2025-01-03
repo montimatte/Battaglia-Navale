@@ -12,66 +12,74 @@ namespace client
 {
     internal class Gioco
     {
+        List<Barca> barche;
         Matrice campo;
         Matrice nemico;
         Campo c;
         Nemico n;
-        public Gioco(Matrice m) { 
+        int nAffondate;
+        public Gioco(Matrice m, List<Barca> barche)
+        {
             this.campo = m;
             this.nemico = new Matrice();
-            this.c=new Campo(this.campo);
-            this.n=new Nemico(this.nemico);
+            this.c = new Campo(this.campo);
+            this.n = new Nemico(this.nemico);
+            this.barche = barche;
+            this.nAffondate = 0;
         }
 
-        public /*async*/ void pronto()
+        public void SendMessage(String messaggio)
         {
             UdpClient client = new UdpClient();
-            byte[] data = Encoding.ASCII.GetBytes("pronto");
+            byte[] data = Encoding.ASCII.GetBytes(messaggio);
             client.Send(data, data.Length, "127.0.0.1", 12345);
-
+        }
+        public String RecieveMessage()
+        {
+            UdpClient client = new UdpClient();
             IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any, 0);
             byte[] datarecieved = null;
-
             datarecieved = client.Receive(ref recieveEP);
-            /*
-            //task per rendere non bloccanti le chiamate
-            Task t = Task.Factory.StartNew(() =>
-            {
-                
-            });
-            await t; //funziona asincrona che non rende bloccante la chiamata
-            */
-
             String risposta = Encoding.ASCII.GetString(datarecieved);
+            return risposta;
+
+        }
+
+        public void pronto()
+        {
+            SendMessage("pronto");
+
+            String risposta = RecieveMessage();
 
             if (risposta == "inizio")
             {
                 //invio la matrice al server
-                data = Encoding.ASCII.GetBytes(campo.toString());
-                client.Send(data, data.Length, "127.0.0.1", 12345);
-
+                SendMessage(campo.toString());
                 //visualizzo finestra di gioco
                 c.Show();
+                gioca();
+            }
+        }
+
+        public void gioca()
+        {
+            String risposta = RecieveMessage();
+            if (risposta == "è il tuo turno")
+            {
+                turno();
+            }
+            else
+            {
+                avversario();
             }
         }
 
         public void turno()
         {
-            UdpClient client = new UdpClient();
-            IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any, 0);
-            byte[] datarecieved = null;
+            Attacco a = new Attacco();
+            a.Show();
 
-            datarecieved = client.Receive(ref recieveEP);
-            String risposta = Encoding.ASCII.GetString(datarecieved);
-            if(risposta =="è il tuo turno")
-            {
-                Attacco a = new Attacco();
-                a.Show();
-            }
-
-            recieveEP = new IPEndPoint(IPAddress.Any, 0);
-            datarecieved = null;
-            risposta = Encoding.ASCII.GetString(datarecieved);
+            string risposta = RecieveMessage();
 
             //repaint
             String[] campi = risposta.Split(';');
@@ -96,20 +104,22 @@ namespace client
             {
                 nemico.GetCella(riga,colonna).setBarca();
             }
-            
-            n=new Nemico(nemico);
+
+            risposta = RecieveMessage();
+            if(risposta=="fine gioco")
+            {
+                MessageBox.Show("GAME OVER!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Application.Exit();
+            }
+
+            n =new Nemico(nemico);
             c.Show();
             n.Show();
         }
 
         public void avversario()
         {
-            UdpClient client = new UdpClient();
-            IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any, 0);
-            byte[] datarecieved = null;
-
-            datarecieved = client.Receive(ref recieveEP);
-            String risposta = Encoding.ASCII.GetString(datarecieved);
+            String risposta = RecieveMessage();
 
             String[] campi = risposta.Split(';');
             int riga = int.Parse(campi[0]);
@@ -122,6 +132,25 @@ namespace client
             if (colpita == 1)
             {
                 MessageBox.Show("L'avversario ha fatto centro! ("+riga+";"+colonna+")", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                for(int i = 0; i < barche.Count; i++)
+                {
+                    bool affondata=barche[i].checkAffondata(riga,colonna);
+                    if (affondata)
+                    {
+                        MessageBox.Show("Una barca è stata affondata!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        nAffondate++;
+                    }
+                }
+
+                if (nAffondate == barche.Count)
+                {
+                    SendMessage("game over");
+                }
+                else
+                {
+                    SendMessage("continua");
+                }
             }
             else if (colpita == 0)
             {
@@ -129,7 +158,14 @@ namespace client
             }
             campo.GetCella(riga, colonna).setColpita();
 
-            c=new Campo(campo);
+            risposta = RecieveMessage();
+            if (risposta == "fine gioco")
+            {
+                MessageBox.Show("GAME OVER!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+
+            c =new Campo(campo);
             c.Show();
             n.Show();
         }

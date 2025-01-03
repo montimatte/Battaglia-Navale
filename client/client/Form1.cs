@@ -21,7 +21,7 @@ namespace client
             this.FormBorderStyle = FormBorderStyle.FixedDialog; //non permette di ridimensionare
         }
 
-        private async void buttonReady_ClickAsync(object sender, EventArgs e)
+        private void buttonReady_Click(object sender, EventArgs e)
         {
             //debug
             ComboBoxRiga5.SelectedItem = "1";
@@ -88,47 +88,9 @@ namespace client
                 return;
             }
 
-            Gioco g = new Gioco(matrix);
+            Gioco g = new Gioco(matrix, barche);
             g.pronto();
             this.Hide();
-            /*
-            //visualizzo finestra di gioco
-            Campo c = new Campo(matrix);
-            c.Show();
-            Nemico n = new Nemico();
-            n.Show();
-            this.Hide();
-            */
-
-            /*
-            //invio socket e attendo risposta
-
-            buttonReady.Enabled = false; //disattivo il bottone
-
-            UdpClient client = new UdpClient();
-            byte[] data = Encoding.ASCII.GetBytes("pronto");
-            client.Send(data, data.Length, "127.0.0.1", 12345);
-
-            IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any, 0);
-            byte[] datarecieved = null;
-
-            //task per rendere non bloccanti le chiamate
-            Task t = Task.Factory.StartNew(() =>
-            {
-                datarecieved = client.Receive(ref recieveEP);
-            });
-            await t; //funziona asincrona che non rende bloccante la chiamata
-
-            String risposta = Encoding.ASCII.GetString(datarecieved);
-
-            if (risposta == "inizio")
-            {
-                //visualizzo finestra di gioco
-                Campo c = new Campo(matrix);
-                c.Show();
-                this.Hide();
-            }  
-            */
         }
     }
 }

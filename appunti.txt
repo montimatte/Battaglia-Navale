@@ -13,3 +13,24 @@ client c#:
 	quando entrambi i giocatori sono pronti, il gioco inizia.
 	quando è il turno il giocatore seleziona una riga e una colonna e lancerà l'attacco
 	le coordinate vengono inviate al server, che le comunica all'altro client. il client risponde al server con l'esito dell'attacco che lo comunica al client di partenza
+
+
+
+
+
+ UdpClient client=new UdpClient();
+ byte[] data=Encoding.ASCII.GetBytes("ciao mi chiamo" + textBoxMessaggio.Text);
+ client.Send(data, data.Length, "localhost", 12345);
+
+ IPEndPoint recieveEP=new IPEndPoint(IPAddress.Any, 0);
+ byte[] datarecieved=null;
+
+ //task per rendere non bloccanti le chiamate
+ Task t = Task.Factory.StartNew(() =>
+ {
+     datarecieved = client.Receive(ref recieveEP);
+ });
+ await t; //funziona asincrona che non rende bloccante la chiamata
+
+ String risposta=Encoding.ASCII.GetString(datarecieved);
+ textBox1.Text = risposta;

@@ -68,11 +68,11 @@ namespace client
         }
 
         //controlla se il missile ha colpito la barca: se si aumenta i colpi subiti e controlla se la barca è affondata
-        public bool checkColpita(Missile m)
+        public bool checkAffondata(int riga, int colonna)
         {
             for (int i = 0; i < this.celle.Length; i++)
             {
-                if (m.getRiga() == this.celle[i].getRiga() && m.getColonna() == this.celle[i].getColonna()) { 
+                if (riga == this.celle[i].getRiga() && colonna == this.celle[i].getColonna()) { 
                     colpi++;
                     this.celle[i].setColpita();
                     if (this.colpi == this.lunghezza)
