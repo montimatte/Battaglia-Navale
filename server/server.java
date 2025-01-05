@@ -12,8 +12,8 @@ class server{
 
     public static void main(String[] args) throws IOException {
         sochet = new DatagramSocket(12345);
-        client1 = new DatagramPacket(null, 0);
-        client2 = new DatagramPacket(null, 0);
+        client1 = new DatagramPacket(new byte[0], 0);
+        client2 = new DatagramPacket(new byte[0], 0);
         m1 = new matrice();
         m2 = new matrice();
         ready();
@@ -23,14 +23,13 @@ class server{
 
     public static void ready() throws IOException
     {
+        int nPronto=0;
         while (true) { 
 
-            DatagramPacket packet = new DatagramPacket(null,-1);
+            DatagramPacket packet = new DatagramPacket(new byte[0],0);
             String messaggio = recive(packet);
             
             System.out.println(messaggio);
-
-            int nPronto = 0;
 
             if(messaggio.equals("pronto"))
             {              
@@ -64,7 +63,7 @@ class server{
         int contatore = 0;
         while(contatore < 2)
         {
-            DatagramPacket packet = new DatagramPacket(null,-1);
+            DatagramPacket packet = new DatagramPacket(new byte[0],0);
             String messaggio = recive(packet);
     
             if(packet.getAddress() == client1.getAddress() && packet.getPort() == client1.getPort())
@@ -140,7 +139,7 @@ class server{
     public static String recive(DatagramPacket packet) throws IOException
     {
         byte[] buffer = new byte[1500];
-        packet = new DatagramPacket(buffer, buffer.length);
+        packet.setData(buffer, 0, buffer.length);
         sochet.receive(packet);
         
         String messaggio = new String(packet.getData(),0,packet.getLength());

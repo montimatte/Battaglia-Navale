@@ -35,3 +35,4 @@ C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\batta
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.dje-NE.resources
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\dje-NE\client.resources.dll
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Nemico.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Attacco.resources

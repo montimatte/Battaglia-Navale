@@ -33,14 +33,17 @@ namespace client
             UdpClient client = new UdpClient();
             byte[] data = Encoding.ASCII.GetBytes(messaggio);
             client.Send(data, data.Length, "127.0.0.1", 12345);
+            client.Close();
         }
         public String RecieveMessage()
         {
             UdpClient client = new UdpClient();
-            IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any, 0);
+            IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any,0);
+            client.Client.Bind(recieveEP); // Associa alla porta locale
             byte[] datarecieved = null;
             datarecieved = client.Receive(ref recieveEP);
             String risposta = Encoding.ASCII.GetString(datarecieved);
+            client.Close();
             return risposta;
 
         }
