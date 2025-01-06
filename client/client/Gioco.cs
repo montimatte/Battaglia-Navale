@@ -18,6 +18,7 @@ namespace client
         Campo c;
         Nemico n;
         int nAffondate;
+        UdpClient client;
         public Gioco(Matrice m, List<Barca> barche)
         {
             this.campo = m;
@@ -26,24 +27,22 @@ namespace client
             this.n = new Nemico(this.nemico);
             this.barche = barche;
             this.nAffondate = 0;
+            client = new UdpClient();
         }
 
         public void SendMessage(String messaggio)
         {
-            UdpClient client = new UdpClient();
             byte[] data = Encoding.ASCII.GetBytes(messaggio);
             client.Send(data, data.Length, "127.0.0.1", 12345);
-            client.Close();
+            Console.WriteLine("messaggio inviato: " + messaggio);
         }
         public String RecieveMessage()
         {
-            UdpClient client = new UdpClient();
             IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any,0);
-            client.Client.Bind(recieveEP); // Associa alla porta locale
             byte[] datarecieved = null;
             datarecieved = client.Receive(ref recieveEP);
             String risposta = Encoding.ASCII.GetString(datarecieved);
-            client.Close();
+            Console.WriteLine("messaggio ricevuto: " + risposta);
             return risposta;
 
         }
@@ -165,6 +164,7 @@ namespace client
             if (risposta == "fine gioco")
             {
                 MessageBox.Show("GAME OVER!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                client.Close();
                 Application.Exit();
             }
 

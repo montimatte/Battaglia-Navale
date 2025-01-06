@@ -28,8 +28,6 @@ class server{
 
             DatagramPacket packet = new DatagramPacket(new byte[0],0);
             String messaggio = recive(packet);
-            
-            System.out.println(messaggio);
 
             if(messaggio.equals("pronto"))
             {              
@@ -143,6 +141,7 @@ class server{
         sochet.receive(packet);
         
         String messaggio = new String(packet.getData(),0,packet.getLength());
+        System.out.println("messaggio ricevuto: " + messaggio);
 
         return messaggio;
     }
@@ -153,5 +152,6 @@ class server{
         packet.setData(bufferRisposta);
         packet.setLength(bufferRisposta.length);
         sochet.send(packet);
+        System.out.println("messaggio inviato: " + messaggio);
     }
 }
