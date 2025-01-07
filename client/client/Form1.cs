@@ -89,8 +89,9 @@ namespace client
             }
 
             Gioco g = new Gioco(matrix, barche);
-            g.pronto();
             this.Hide();
+            g.pronto();
+
         }
     }
 }

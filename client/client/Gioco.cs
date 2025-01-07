@@ -59,6 +59,7 @@ namespace client
                 SendMessage(campo.toString());
                 //visualizzo finestra di gioco
                 c.Show();
+                n.Show();
                 gioca();
             }
         }
@@ -66,7 +67,7 @@ namespace client
         public void gioca()
         {
             String risposta = RecieveMessage();
-            if (risposta == "è il tuo turno")
+            if (risposta == "e il tuo turno")
             {
                 turno();
             }

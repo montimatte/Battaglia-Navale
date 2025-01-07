@@ -19,6 +19,7 @@ class server{
         ready();
         //fare funzione leggi matrice che arriva dal client
         leggi();
+        gioca();
     }
 
     public static void ready() throws IOException
@@ -64,12 +65,12 @@ class server{
             DatagramPacket packet = new DatagramPacket(new byte[0],0);
             String messaggio = recive(packet);
     
-            if(packet.getAddress() == client1.getAddress() && packet.getPort() == client1.getPort())
+            if(packet.getAddress().equals(client1.getAddress()) && packet.getPort() == client1.getPort())
             {
                 m1.popola(messaggio);
                 contatore++;
             }
-            else if(packet.getAddress() == client2.getAddress() && packet.getPort() == client2.getPort())
+            else if(packet.getAddress().equals(client2.getAddress()) && packet.getPort() == client2.getPort())
             {
                 m2.popola(messaggio);
                 contatore++;
@@ -79,11 +80,11 @@ class server{
 
     public static void turno(DatagramPacket giocatore, DatagramPacket avversario,matrice mGiocatore, matrice mAvversario) throws IOException
     {
-        String messaggioTurno = "è il tuo turno";
+        String messaggioTurno = "e il tuo turno";
         send(messaggioTurno, giocatore);
 
         //ricevo il messaggio che è un riga;colonna
-        DatagramPacket packet = new DatagramPacket(null,-1);
+        DatagramPacket packet = new DatagramPacket(new byte[0],0);
         String messaggio = recive(packet);
 
         String[] campi = messaggio.split(";");
@@ -98,7 +99,7 @@ class server{
         send(risposta, avversario);
 
         //controllo se il gioco è finito
-        packet = new DatagramPacket(null,-1);
+        packet = new DatagramPacket(new byte[0],0);
         messaggio = recive(packet);
 
         if(messaggio.equals("game over"))

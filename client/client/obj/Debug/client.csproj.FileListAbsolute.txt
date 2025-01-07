@@ -1,38 +1,16 @@
-R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.exe.config
-R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.exe
-R:\esercizi\client-server\battaglia navale\client\client\bin\Debug\client.pdb
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.AssemblyReference.cache
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Form1.resources
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Properties.Resources.resources
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.GenerateResource.cache
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.exe
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.pdb
-R:\esercizi\client-server\battaglia navale\client\client\obj\Debug\client.Campo.resources
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe.config
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.pdb
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.AssemblyReference.cache
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.resources
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Form1.resources
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Properties.Resources.resources
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.GenerateResource.cache
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.exe
-C:\Users\piede837falso\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.pdb
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe.config
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.exe
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\client.pdb
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\dje-NE\client.resources.dll
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.AssemblyReference.cache
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Attacco.resources
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.resources
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Form1.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Nemico.resources
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Properties.Resources.resources
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.dje-NE.resources
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.GenerateResource.cache
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.csproj.CoreCompileInputs.cache
+C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\dje-NE\client.resources.dll
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.exe
 C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.pdb
-C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\bin\Debug\dje-NE\client.resources.dll
-C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Campo.dje-NE.resources
-C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\dje-NE\client.resources.dll
-C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Nemico.resources
-C:\Users\master\Desktop\scuola\tecnologie e progetti\5°anno\client-server\battaglia navale\client\client\obj\Debug\client.Attacco.resources
