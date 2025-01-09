@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace client
 {
@@ -36,22 +37,28 @@ namespace client
             client.Send(data, data.Length, "127.0.0.1", 12345);
             Console.WriteLine("messaggio inviato: " + messaggio);
         }
-        public String RecieveMessage()
+        public async Task<string> RecieveMessage()
         {
             IPEndPoint recieveEP = new IPEndPoint(IPAddress.Any,0);
             byte[] datarecieved = null;
-            datarecieved = client.Receive(ref recieveEP);
-            String risposta = Encoding.ASCII.GetString(datarecieved);
+            /**/
+            Task t = Task.Factory.StartNew(() =>
+            {
+                datarecieved = client.Receive(ref recieveEP);
+            });
+            await t;
+            /**/
+            //datarecieved = client.Receive(ref recieveEP);
+            string risposta = Encoding.ASCII.GetString(datarecieved);
             Console.WriteLine("messaggio ricevuto: " + risposta);
             return risposta;
-
         }
 
-        public void pronto()
+        public async void pronto()
         {
             SendMessage("pronto");
 
-            String risposta = RecieveMessage();
+            string risposta= await RecieveMessage();
 
             if (risposta == "inizio")
             {
@@ -64,25 +71,28 @@ namespace client
             }
         }
 
-        public void gioca()
+        public async void gioca()
         {
-            String risposta = RecieveMessage();
-            if (risposta == "e il tuo turno")
+            while (true)
             {
-                turno();
-            }
-            else
-            {
-                avversario();
+                string risposta = await RecieveMessage();
+                if (risposta == "e il tuo turno")
+                {
+                    await turno();
+                }
+                else
+                {
+                    await avversario();
+                }
             }
         }
 
-        public void turno()
+        public async Task<int> turno()
         {
             Attacco a = new Attacco();
             a.Show();
 
-            string risposta = RecieveMessage();
+            string risposta = await RecieveMessage();
 
             //repaint
             String[] campi = risposta.Split(';');
@@ -90,7 +100,7 @@ namespace client
             int colonna=int.Parse(campi[1]);
             int colpita=int.Parse(campi[2]);
 
-            c.Close();
+            c.Hide();
             n.Close();
 
             if (colpita == 1)
@@ -108,7 +118,7 @@ namespace client
                 nemico.GetCella(riga,colonna).setBarca();
             }
 
-            risposta = RecieveMessage();
+            risposta= await RecieveMessage();
             if(risposta=="fine gioco")
             {
                 MessageBox.Show("GAME OVER!","",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -118,11 +128,12 @@ namespace client
             n =new Nemico(nemico);
             c.Show();
             n.Show();
+            return 0;
         }
 
-        public void avversario()
+        public async Task<int> avversario()
         {
-            String risposta = RecieveMessage();
+            string risposta= await RecieveMessage();
 
             String[] campi = risposta.Split(';');
             int riga = int.Parse(campi[0]);
@@ -130,11 +141,11 @@ namespace client
             int colpita = int.Parse(campi[2]);
 
             c.Close();
-            n.Close();
+            n.Hide();
 
             if (colpita == 1)
             {
-                MessageBox.Show("L'avversario ha fatto centro! ("+riga+";"+colonna+")", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("L'avversario ha fatto centro! ("+(riga+1)+";"+(colonna + 1) +")", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 for(int i = 0; i < barche.Count; i++)
                 {
@@ -145,23 +156,23 @@ namespace client
                         nAffondate++;
                     }
                 }
-
-                if (nAffondate == barche.Count)
-                {
-                    SendMessage("game over");
-                }
-                else
-                {
-                    SendMessage("continua");
-                }
             }
             else if (colpita == 0)
             {
-                MessageBox.Show("L'avversario ha fatto acqua! ("+riga+";"+colonna+")", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("L'avversario ha fatto acqua! ("+(riga+1)+";"+(colonna+1)+")", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             campo.GetCella(riga, colonna).setColpita();
 
-            risposta = RecieveMessage();
+            if (nAffondate == barche.Count)
+            {
+                SendMessage("game over");
+            }
+            else
+            {
+                SendMessage("continua");
+            }
+
+            risposta = await RecieveMessage();
             if (risposta == "fine gioco")
             {
                 MessageBox.Show("GAME OVER!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -172,6 +183,7 @@ namespace client
             c =new Campo(campo);
             c.Show();
             n.Show();
+            return 0;
         }
     }
 }

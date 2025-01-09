@@ -14,6 +14,7 @@ namespace client
         private bool orizzontale;
         private int colpi;
         private bool affondata;
+        private bool alreadyChecked;
         public Barca(int r, int c, int lunghezza, bool orizzontale)
         {
             this.r = r;
@@ -23,6 +24,7 @@ namespace client
             this.orizzontale = orizzontale;
             this.colpi = 0;
             this.affondata = false;
+            this.alreadyChecked = false;
 
             //inizializza celle
 
@@ -70,6 +72,11 @@ namespace client
         //controlla se il missile ha colpito la barca: se si aumenta i colpi subiti e controlla se la barca è affondata
         public bool checkAffondata(int riga, int colonna)
         {
+            if (alreadyChecked)
+            {
+                return false;
+            }
+
             for (int i = 0; i < this.celle.Length; i++)
             {
                 if (riga == this.celle[i].getRiga() && colonna == this.celle[i].getColonna()) { 
@@ -77,6 +84,7 @@ namespace client
                     this.celle[i].setColpita();
                     if (this.colpi == this.lunghezza)
                     {
+                        this.alreadyChecked = true;
                         this.affondata=true;
                     }
                 }

@@ -82,6 +82,8 @@ class server{
     {
         String messaggioTurno = "e il tuo turno";
         send(messaggioTurno, giocatore);
+        messaggioTurno= "non e il tuo turno";
+        send(messaggioTurno, avversario);
 
         //ricevo il messaggio che è un riga;colonna
         DatagramPacket packet = new DatagramPacket(new byte[0],0);

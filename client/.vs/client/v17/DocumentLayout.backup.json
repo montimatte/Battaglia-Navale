@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\",
+  "WorkspaceRootPath": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|c:\\users\\master\\desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|c:\\users\\master\\desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - copy\\client\\client\\gioco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|solutionrelative:client\\gioco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|c:\\users\\master\\desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - copy\\client\\client\\barca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|solutionrelative:client\\barca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|solutionrelative:client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|c:\\users\\master\\desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6ADEFC92-5125-4979-8967-63B8D8008AF0}|client\\client.csproj|solutionrelative:client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,32 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\Form1.cs",
-              "RelativeDocumentMoniker": "client\\Form1.cs",
-              "ToolTip": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\Form1.cs",
-              "RelativeToolTip": "client\\Form1.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAowFwAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Barca.cs",
+              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Barca.cs",
+              "RelativeDocumentMoniker": "client\\Barca.cs",
+              "ToolTip": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Barca.cs",
+              "RelativeToolTip": "client\\Barca.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAA0wE0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T15:18:56.635Z",
+              "WhenOpened": "2025-01-09T15:44:18.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Gioco.cs",
+              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Gioco.cs",
+              "RelativeDocumentMoniker": "client\\Gioco.cs",
+              "ToolTip": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Gioco.cs",
+              "RelativeToolTip": "client\\Gioco.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAmwA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T18:07:17.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Form1.cs",
+              "RelativeDocumentMoniker": "client\\Form1.cs",
+              "ToolTip": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Form1.cs",
+              "RelativeToolTip": "client\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T15:18:56.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale - Copy\\client\\client\\Form1.cs",
               "RelativeDocumentMoniker": "client\\Form1.cs",
               "ToolTip": "C:\\Users\\master\\Desktop\\scuola\\tecnologie e progetti\\5\u00B0anno\\client-server\\battaglia navale\\client\\client\\Form1.cs [Design]",
-              "RelativeToolTip": "client\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\battaglia navale\\client\\client\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-07T15:18:53.507Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-07T15:18:53.507Z"
             }
           ]
         }
